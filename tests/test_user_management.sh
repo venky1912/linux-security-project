@@ -1,3 +1,4 @@
 #!/bin/bash
-# Test if UFW is enabled and ports are open
-sudo ufw status | grep "2222/tcp" && echo "UFW SSH Port: PASSED" || echo "UFW SSH Port: FAILED"
+# Test if secureuser exists and password complexity is enforced
+id "secureuser" && echo "User Management: PASSED" || echo "User Management: FAILED"
+grep "minlen = 12" /etc/security/pwquality.conf && echo "Password Policy: PASSED" || echo "Password Policy: FAILED"
